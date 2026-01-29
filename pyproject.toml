@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ansa-rag"
+version = "0.1.0"
+description = "ANSA Engineering Problem Solver with RAG"
+readme = "Readme.md"
+requires-python = ">=3.9"
+dependencies = [
+    "python-dotenv>=1.0.0",
+    "langchain>=0.1.0",
+    "langchain-huggingface>=0.0.3",
+    "chromadb>=0.4.0",
+    "beautifulsoup4>=4.12.0",
+    "streamlit>=1.28.0",
+    "langchain_anthropic>=0.1.0",
+    "langchain-ollama>=0.1.0",
+    "langchain-community>=0.0.20",
+    "langchain-text-splitters>=0.0.1",
+    "sentence-transformers>=2.2.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+]
+
+[project.scripts]
+ansa-rag = "ansa_rag.cli:run_app"
+ansa-db-insert = "ansa_rag.cli:run_db_insert"
+ansa-query = "ansa_rag.cli:run_query"
+
+
